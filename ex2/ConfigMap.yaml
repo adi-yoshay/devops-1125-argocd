@@ -11,5 +11,6 @@ data:
     <body style="background-color: #2d3436; color: white; text-align: center; padding-top: 50px;">
       <h1>Hello Class 1125!</h1>
       <p>Deployed via ArgoCD</p>
+      <p>Adi Yoshay Was Here</p>
     </body>
     </html>
