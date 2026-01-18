@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins-git
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/adi-yoshay/devops-1125-argocd.git
+    targetRevision: main
+    path: charts/jenkins
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-nodeport.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
